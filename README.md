@@ -1,4 +1,4 @@
 dropbytes-client
 ================
 
-Dropbytes command-line client
+README will be updated when dropbytes is ready on `pip`.
