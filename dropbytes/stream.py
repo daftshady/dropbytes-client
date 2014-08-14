@@ -129,8 +129,10 @@ class BlockingStream(Stream, FileMixin):
         if state == b's':
             try:
                 url = self._read_all(self._buf_size)
-                print ('Use this url to retrieve your file: %s' \
-                    % url.decode(_ENCODING))
+                print (
+                    'Use this url to retrieve your file: %s'
+                    % url.decode(_ENCODING)
+                )
             except socket.error:
                 self._raise_error(
                     'Unexpected Error occured while reading url')
@@ -138,7 +140,8 @@ class BlockingStream(Stream, FileMixin):
             # Use `state` to determine which error has occured.
             self._raise_error(
                 'Unexpected error occured. Error byte: %s' %
-                    state.decode(_ENCODING))
+                state.decode(_ENCODING)
+            )
 
     def _read_all(self, len_, cut=None):
         """Synchronously reads `len_` data from stream"""
