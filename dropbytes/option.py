@@ -29,8 +29,8 @@ class OptionParser(object):
 
         global global_option
         if len(args[-1]) > self._FILENAME_LIMIT:
-            raise ParseError('Filename cannot exceed 128 character')
-        if '/' in len(args[-1]):
+            raise ParseError('Filename cannot exceed 128 bytes')
+        if '/' in args[-1]:
             raise ParseError('DO NOT USE path indentifier / to filename. ')
         global_option.filename = args[-1]
 
@@ -65,3 +65,4 @@ class Option(object):
         pass
 
 global_option = Option()
+global_parser = OptionParser()
